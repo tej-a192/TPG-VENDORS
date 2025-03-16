@@ -1,7 +1,5 @@
-const { Clerk } = require("@clerk/clerk-sdk-node");
+const { ClerkExpressWithAuth } = require("@clerk/clerk-sdk-node");
 
-const clerk = new Clerk({
-  secretKey: process.env.CLERK_SECRET_KEY,
-});
+const requireAuth = ClerkExpressWithAuth();
 
-module.exports = clerk;
+module.exports = requireAuth;
